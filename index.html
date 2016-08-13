@@ -12,17 +12,33 @@
         <div class="">
         	<div>
         		<label for="textoAlert">Deixe sua mensagem</label>
-        		<input type="text" id="textoAlert" placeholder="Mensagem" />
+        		<input type="text" id="textoAlert" placeholder="Mensagem" value="teste" />
         	</div>
         	<div>
         		<label for="theme">Tema</label>
 	        	<select id="theme">
-	        		<option value="normal" selected>Normal</option>
-	        		<option value="success">Success</option>
+	        		<option value="normal" >Normal</option>
+	        		<option value="success" selected>Success</option>
 	        		<option value="warning">Warning</option>
 	        		<option value="error">Error</option>
 	        	</select>
         	</div>
+            <div>
+                <label for="positionX">Posição X</label>
+                <select id="positionX">
+                    <option value="right" selected>Right</option>
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
+            <div>
+                <label for="positionY">Posição Y</label>
+                <select id="positionY">
+                    <option value="bottom" selected>Bottom</option>
+                    <option value="top">Top</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
         	<div>
         		<label for="temporary">Temporário</label>
         		<select id="temporary">
@@ -38,24 +54,28 @@
         </div>
         <script type="text/javascript">
         	var teste = document.getElementById("alerta");
-        	teste.addEventListener("click", function(){
-        		var texto = document.getElementById("textoAlert").value;
-        		var theme = document.getElementById("theme").value;
-        		var temporary = document.getElementById("temporary").value;
-        		var timeout = document.getElementById("timeout").value;
-        		switch(temporary){
-        			case "true":
-        				temporary = true;
-        				break;
-        			case "false":
-        				temporary = false;
-        				break;
-        		}
+            teste.addEventListener("click", function(){
+                var texto = document.getElementById("textoAlert").value;
+                var theme = document.getElementById("theme").value;
+                var temporary = document.getElementById("temporary").value;
+                var timeout = document.getElementById("timeout").value;
+                var posX = document.getElementById("positionX").value;
+                var posY = document.getElementById("positionY").value;
+                switch(temporary){
+                    case "true":
+                        temporary = true;
+                        break;
+                    case "false":
+                        temporary = false;
+                        break;
+                }
 	        	noraAlert({
 	        		'text' : texto,
 	        		'theme': theme,
 	        		'temporary': temporary,
-	        		'timeout': timeout
+	        		'timeout': timeout,
+                    'positionX': posX,
+                    'positionY': posY
 	        	});
         	});
         </script>

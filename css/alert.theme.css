@@ -2,28 +2,51 @@
 	animation-name: slideInUp, fadeIn;
 	animation-duration: 0.25s, 0.25s;
 	position: fixed;
-	min-width: 320px;
-	bottom: 40px;
-	right: 40px;
+  min-width: 320px;
 	padding: 20px;
 	padding-right: 40px;
 	border-radius: 3px;
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.6);
+}
+.alert.alert-center{
+  left: calc(50% - 160px);
+  top: calc(50% - 13px);
+}
+.alert.alert-left{
+  left: 40px;
+}
+.alert.alert-left.alert-center{
+  left: 40px;
+  right: initial;
+}
+.alert.alert-right.alert-center{
+  left: initial;
+  right: 40px;
+}
+.alert.alert-top{
+  top: 40px;
+}
+.alert.alert-bottom{
+  bottom: 40px;
+}
+.alert.alert-bottom.alert-center{
+  top: initial;
+}
+.alert.alert-right{
+  right: 40px;
 }
 .alert.alert-normal{
 	background-color: #FFF;
 }
 .alert.alert-success{
 	background-color: #2ecc71;
-    color: #FFF;
 }
 .alert.alert-error{
 	background-color: #e74c3c;
-    color: #FFF;
 }
 .alert.alert-warning{
 	background-color: #f1c40f;
-    color: #FFF;
 }
 .alert.closing{
 	animation-name: slideOutDown, fadeOut;

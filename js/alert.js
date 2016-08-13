@@ -9,6 +9,8 @@
 		this.style = true;
 		this.temporary = false;
 		this.timeout = 5000;
+		this.positionX = "alert-right";
+		this.positionY = "alert-bottom";
 		this.baseIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
 		this.baseTheme = "css/alert.theme.css";
 	}
@@ -73,6 +75,12 @@
 				if(data.timeout != null){
 					this.setCounter(data.timeout);
 				}
+				if(data.positionX != null){
+					this.setPositionX(data.positionX);
+				}
+				if(data.positionY != null){
+					this.setPositionY(data.positionY);
+				}
 			}
 		/*
 		======================================
@@ -93,6 +101,8 @@
 				btn.setAttribute("class", "alert-control alert-close material-icons md-18");
 				btn.innerHTML = "close";
 				modal.setAttribute("class", "alert");
+				modal.classList.add(this.positionX);
+				modal.classList.add(this.positionY);
 				if(el.style == true){
 					modal.classList.add(el.theme);
 				}
@@ -205,7 +215,42 @@
 				//TEMPORARY
 			===================================
 			*/
-
+			/*
+			==================================
+				POSITION
+			==================================
+			*/
+				/*
+				--------------------------------
+					X
+				--------------------------------
+				*/
+					Alert.prototype.setPositionX = function(data){
+						this.positionX = "alert-"+data;
+					}
+				/*
+				--------------------------------
+					//X
+				--------------------------------
+				*/
+				/*
+				--------------------------------
+					Y
+				--------------------------------
+				*/
+					Alert.prototype.setPositionY = function(data){
+						this.positionY = "alert-"+data;
+					}
+				/*
+				--------------------------------
+					//Y
+				--------------------------------
+				*/
+			/*
+			==================================
+				//POSITION
+			==================================
+			*/
 		/*
 		//////////////////////////////////////
 			//SETS
