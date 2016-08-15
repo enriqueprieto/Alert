@@ -3,12 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Plugin Js Alert</title>
+        <title>Simple Alert</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
         <script type="text/javascript" src="js/alert.js"></script>
     </head>
     <body>
+        <header class="header" id="header">
+            <div>
+                <h1>Simple Alert</h1>
+                <p>Um alerta simples para seu projeto</p>
+                <div class="header-nav">
+                    <button type="button" class="nav-item alert-btn" data-theme="normal">Normal</button>
+                    <button type="button" class="nav-item alert-btn" data-theme="success">Success</button>
+                    <button type="button" class="nav-item alert-btn" data-theme="warning">Warning</button>
+                    <button type="button" class="nav-item alert-btn" data-theme="error">Error</button>
+                </div>
+            </div>
+        </header>
         <div class="">
         	<div>
         		<label for="textoAlert">Deixe sua mensagem</label>
@@ -52,6 +66,8 @@
         	</div>
         	<button id="alerta">Dar alerta</button>
         </div>
+        <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript">
         	var teste = document.getElementById("alerta");
             teste.addEventListener("click", function(){
@@ -69,7 +85,7 @@
                         temporary = false;
                         break;
                 }
-	        	noraAlert({
+	        	simpleAlert({
 	        		'text' : texto,
 	        		'theme': theme,
 	        		'temporary': temporary,

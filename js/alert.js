@@ -131,8 +131,9 @@
 			Alert.prototype.close = function(){
 				var modal = document.getElementById("alert");
 				modal.classList.add("closing");
-				setTimeout(function(){
+				var removed = setTimeout(function(){
 					modal.remove();
+					clearTimeout(removed);
 				}, 250);
 			}
 		/*
@@ -331,7 +332,7 @@
 		CALL
 	======================================
 	*/
-		function noraAlert(data){
+		function simpleAlert(data){
 			var app = new Alert();
 			if(!app.exist()){
 				if(app.checkObj(data)){
